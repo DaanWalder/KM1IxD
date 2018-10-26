@@ -42,14 +42,7 @@ void ofApp::update() {
 	rotationX += rotateSpeedX;
 	rotationY += rotateSpeedY;
 	rotationZ += rotateSpeedZ;
-	if (redLED == false)
-	{
-		arduino.sendDigital(PIN_REDLED, ARD_LOW);
-	}
-	else
-	{
-		arduino.sendDigital(PIN_REDLED, ARD_HIGH);
-	}
+	
 }
 
 void ofApp::draw() {
@@ -70,6 +63,8 @@ void ofApp::draw() {
 	if (saveMatrix) ofPopMatrix();
 
 	if (drawGrid) ofDrawGrid(200);
+
+	if (redLED) arduino.sendDigital(PIN_REDLED, ARD_HIGH);
 
 	//if (arduino.getDigital(PIN_BUTTONRED)) {
 	//	arduino.sendDigital(PIN_REDLED, ARD_HIGH);
