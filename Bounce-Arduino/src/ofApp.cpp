@@ -10,7 +10,7 @@ void ofApp::setup(){
 
 	// connect to the Arduino
 	// use the same device name used in the Arduino IDE
-	arduino.connect("COM7", 57600);
+	arduino.connect("COM3", 57600);
 	arduino.sendFirmwareVersionRequest(); // workaround for ofArduino/firmata bug
 	x = ofRandom(0, ofGetWidth());
 	y = ofRandom(0, ofGetHeight());
